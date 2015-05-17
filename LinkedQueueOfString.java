@@ -12,6 +12,7 @@ package KataProgramming;
 public class LinkedQueueOfString {
 
 	private Node first, last;
+	private int size = 0;
 	
 	public class Node
 	{
@@ -32,6 +33,8 @@ public class LinkedQueueOfString {
 		
 		if(isEmpty()) first = last;
 		else 	oldLast.next = last;
+		
+		size++;
 	}
 	
 	public String dequeue(){
@@ -39,6 +42,13 @@ public class LinkedQueueOfString {
 		first = first.next;
 		if(isEmpty()) last = null;
 		
+		size--;
+		
 		return item;
+	}
+
+	public int size() {
+		
+		return size;
 	}
 }

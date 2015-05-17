@@ -13,6 +13,7 @@ public class Client {
 		System.out.println("Pour QuickUnion taper : 2");
 		System.out.println("Pour QuickUnionWeighted taper : 3");
 		System.out.println("Pour StackOfString taper : 4");
+		System.out.println("Pour StackOfString taper : 5");
 		
 		
 		in = new Scanner(System.in);
@@ -24,12 +25,30 @@ public class Client {
 		case 4:
 			stackOfString();
 			break;			
-
+		case 5:
+			linkedQueueOfString();
+			break;
 		default:
 			break;
 		}
 		
 
+	}
+
+	private static void linkedQueueOfString() {
+		
+		LinkedQueueOfString queue = new LinkedQueueOfString();
+		
+		queue.enqueue("bonjour");
+		queue.enqueue("tout");
+		queue.enqueue("le");
+		queue.enqueue("monde");
+		
+		int size = queue.size();
+		for (int i = 0; i < size; i++) {
+			System.out.println(queue.dequeue());
+		}
+		
 	}
 
 	private static void stackOfString() {
